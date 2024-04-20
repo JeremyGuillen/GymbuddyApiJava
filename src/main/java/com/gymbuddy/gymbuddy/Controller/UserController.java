@@ -19,7 +19,7 @@ public class UserController {
     this.userRepository = userRepository;
   }
 
-  @PostMapping("user")
+  @PostMapping("users")
   public ResponseEntity<User> createUser(@RequestBody User user) {
     try {
       User userCreated = userRepository.save(user);

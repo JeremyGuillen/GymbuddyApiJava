@@ -6,51 +6,62 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "exercises")
 public class Exercises {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_exersice", nullable = false)
-    private Long idExercise;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "id_exersice", nullable = false)
+  private Long idExercise;
 
-    @Column(name = "name")
-    private String name;
+  @Column(name = "name")
+  private String name;
 
-    @Column(name = "video_url")
-    private String videUrl;
+  @Column(name = "video_url")
+  private String videUrl;
 
-    @Column()
-    private String descirption;
+  @Column()
+  private String description;
 
-    public Long getIdExercise() {
-        return idExercise;
-    }
+  public Exercises() {
 
-    public void setIdExercise(Long idExercise) {
-        this.idExercise = idExercise;
-    }
+  }
 
-    public String getName() {
-        return name;
-    }
+  public Exercises(Long idExercise, String name, String videUrl, String description) {
+    this.idExercise = idExercise;
+    this.name = name;
+    this.videUrl = videUrl;
+    this.description = description;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public Long getIdExercise() {
+    return idExercise;
+  }
 
-    public String getVideUrl() {
-        return videUrl;
-    }
+  public void setIdExercise(Long idExercise) {
+    this.idExercise = idExercise;
+  }
 
-    public void setVideUrl(String videUrl) {
-        this.videUrl = videUrl;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getDescirption() {
-        return descirption;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setDescirption(String descirption) {
-        this.descirption = descirption;
-    }
+  public String getVideUrl() {
+    return videUrl;
+  }
+
+  public void setVideUrl(String videUrl) {
+    this.videUrl = videUrl;
+  }
+
+  public String getDescription() {
+    return this.description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
 
 
 }
