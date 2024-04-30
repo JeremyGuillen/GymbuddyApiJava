@@ -49,6 +49,17 @@ public class ExercisesController {
       logger.severe(e.getMessage());
       return ResponseEntity.internalServerError().build();
     }
+  }
 
+  @DeleteMapping("exercises/{exerciseId}")
+  public ResponseEntity<Exercises> deleteExercise(@PathVariable String exerciseId) {
+    try {
+      logger.log(Level.INFO, "Starting delete exercise by id with exercise id: {}", exerciseId);
+      exericsesRepository.deleteById(Long.parseLong((exerciseId)));
+      return ResponseEntity.ok().build();
+    } catch (Exception e) {
+      logger.severe(e.getMessage());
+      return ResponseEntity.internalServerError().build();
+    }
   }
 }
